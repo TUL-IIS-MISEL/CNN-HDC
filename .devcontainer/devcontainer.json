@@ -1,0 +1,52 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the README at:
+// https://github.com/microsoft/vscode-dev-containers/tree/v0.209.4/containers/python-3-miniconda
+{
+	"name": "MISEL-dev",
+	"build": {
+		"context": "..",
+		"dockerfile": "Dockerfile",
+	},
+	"mounts": [
+		"source=/data/TrueNas_MISEL/datasets,target=/datasets,type=bind,consistency=cached"
+	],
+	"runArgs": [
+		"--gpus",
+		"all",
+		"--shm-size",
+		"16gb"
+	],
+	// Set *default* container specific settings.json values on container create.
+	"settings": {
+		"python.defaultInterpreterPath": "/opt/conda/bin/python",
+		"python.pythonPath": "/opt/conda/bin/python",
+		"python.formatting.provider": "black",
+		"python.linting.pylintEnabled": true,
+		"python.linting.enabled": true,
+		"python.linting.mypyEnabled": true,
+		"python.linting.flake8Enabled": true,
+		"terminal.integrated.env.linux": {
+			"PYTHONPATH": "${workspaceFolder}${pathSeparator}${env:PYTHONPATH}"
+		},
+	},
+	// Add the IDs of extensions you want installed when the container is created.
+	"extensions": [
+		"ms-python.python",
+		"ms-python.vscode-pylance",
+		"ms-python.anaconda-extension-pack",
+		"ms-python.gather",
+		"ms-python.isort",
+		"ms-python.black-formatter",
+		"visualstudioexptteam.vscodeintellicode",
+		"donjayamanne.python-environment-manager",
+		"ms-toolsai.jupyter",
+		"eamodio.gitlens",
+		"ms-vsliveshare.vsliveshare"
+	],
+	// Use 'forwardPorts' to make a list of ports inside the container available locally.
+	// "forwardPorts": [],
+	// Use 'postCreateCommand' to run commands after the container is created.
+	// "postCreateCommand": "python --version",
+	// Comment out connect as root instead. More info: https://aka.ms/vscode-remote/containers/non-root.
+	"remoteUser": "vscode",
+	"updateRemoteUserUID": true
+}

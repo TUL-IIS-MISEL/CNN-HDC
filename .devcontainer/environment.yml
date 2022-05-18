@@ -1,0 +1,47 @@
+name: null
+channels:
+  - pytorch
+  - plotly
+  - conda-forge
+  - defaults
+dependencies:
+  - imageio=2.9.0
+  - scipy=1.7.3
+  - pandas=1.4.2
+  - scikit-learn=1.0.2
+  - sympy=1.10.1
+
+  - matplotlib=3.5.1
+  - seaborn=0.11.2
+  - plotly=5.7.0
+  - python-kaleido=0.2.1
+
+  - h5py=3.6.0
+
+  - pytorch-lightning=1.6.2
+
+  - mypy=0.910
+  - black=22.3.0
+  - pylint=2.12.2
+  - flake8=4.0.1
+  - pyflakes=2.4.0
+  - jedi=0.18.1
+  - isort
+  - ninja=1.10.2
+
+  - ipykernel
+
+  - av
+
+  - six
+  - parso
+  - ptvsd
+  - pyparsing
+  - packaging
+
+  - pip=22.0.4
+  - pip:
+      - comet-ml==3.30.0
+      - opencv-python-headless==4.5.5.64
+      - torchinfo==1.6.5
+      - einops==0.4.1
